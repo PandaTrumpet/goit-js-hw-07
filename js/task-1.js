@@ -1,5 +1,5 @@
 'use strict'
-const category = document.querySelectorAll('#categories')
+
 const item = document.querySelectorAll('.item')
 
 console.log(item.length);

@@ -1,6 +1,6 @@
 'use strict'
 const input = document.querySelector('input')
-const creatBtn = document.querySelector('button[data-create]')
+const createBtn = document.querySelector('button[data-create]')
 const destroyBtn = document.querySelector('button[data-destroy]')
 const boxContainer = document.querySelector('#boxes')
 
@@ -20,6 +20,7 @@ function getRandomHexColor() {
       box.style.height = `${size}px`;
       box.style.backgroundColor = getRandomHexColor();
       boxes.push(box);
+      boxContainer.innerHTML = '';
     }
   
     boxContainer.append(...boxes);
@@ -30,13 +31,14 @@ function getRandomHexColor() {
   }
 
 
-  creatBtn.addEventListener('click', () => {
+  createBtn.addEventListener('click', () => {
     const amount = input.value;
   
     if (amount > 0 && amount <= 100) {
       createBoxes(amount);
       input.value = '';
     } 
+    
   });
   
   destroyBtn.addEventListener('click', destroyBoxes);
